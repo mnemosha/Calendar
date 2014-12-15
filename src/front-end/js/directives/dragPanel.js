@@ -7,26 +7,22 @@
 * 3. onDragCancel - when mouse left dragPanel element
 * 4. onDrag - when mouse dragged
 * */
-app.directive('dragPanel', function(ViewConstants, $parse) { 'use strict';
-    function link(scope, element, attrs) {
-        var onDragStartExpression = $parse(attrs.onDragStart),
-            onDragEndExpression = $parse(attrs.onDragEnd),
-            onDragExpression = $parse(attrs.onDrag),
-            onDragCancelExpression = $parse(attrs.onDragCancel),
-            dragStartCoord = 0,
+app.directive('dragPanel', function() { 'use strict';
+    function link(scope, element) {
+        var dragStartCoord = 0,
             isDragging = false;
 
         element.on('mouseup', function(event) {
             if (event.button === 0 && isDragging) {
                 event.relativeY = getRelativeYCoord(event);
-                onDragEndExpression(scope, {event: event});
+                scope.onDragEnd({event: event});
                 isDragging = false;
                 scope.$apply();
             }
         });
-        element.on('mouseleave', function(event) {
+        element.on('mouseleave', function() {
             if (isDragging) {
-                onDragCancelExpression(scope);
+                scope.onDragCancel({event: event});
                 isDragging = false;
                 scope.$apply();
             }
@@ -35,7 +31,7 @@ app.directive('dragPanel', function(ViewConstants, $parse) { 'use strict';
             if (event.button === 0) {
                 event.relativeY = getRelativeYCoord(event);
                 dragStartCoord = event.relativeY;
-                onDragStartExpression(scope, {event: event});
+                scope.onDragStart({event: event});
                 isDragging = true;
                 scope.$apply();
             }
@@ -44,7 +40,7 @@ app.directive('dragPanel', function(ViewConstants, $parse) { 'use strict';
             if (isDragging) {
                 event.relativeY = getRelativeYCoord(event);
                 event.dragStartCoord = dragStartCoord;
-                onDragExpression(scope, {event: event});
+                scope.onDrag({event: event});
                 scope.$apply();
             }
         });
@@ -55,6 +51,12 @@ app.directive('dragPanel', function(ViewConstants, $parse) { 'use strict';
     }
 
     return {
+        scope: {
+            onDrag: '&',
+            onDragStart: '&',
+            onDragEnd: '&',
+            onDragCancel: '&'
+        },
         link: function(scope, element, attrs) {
             element = $(element[0]); // convert angular.element to jQuery object. It's required for testing directive.
             link(scope, element, attrs);
