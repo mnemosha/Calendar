@@ -1,0 +1,141 @@
+.date-picker {
+  border: 1px solid $blue;
+  box-sizing: border-box;
+  width: 210px;
+  user-select: none;
+  .date-picker-header {
+    background: $light-blue;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    .period-value {
+      text-decoration: none;
+      border-bottom: 1px dashed #000080;
+    }
+  }
+  .weekdays-headers {
+    overflow: hidden;
+    text-align: center;
+    border-top: 1px solid $blue;
+    border-bottom: 1px solid $blue;
+    background: #ffffff;
+    .weekday-header {
+      width: (100% / 7);
+      float: left;
+      font-weight: bold;
+      line-height: 25px;
+    }
+  }
+  .days {
+    overflow: hidden;
+    .day {
+      background: #ffffff;
+      width: (100% / 7);
+      float: left;
+      border: 1px solid #ffffff;
+      text-align: center;
+      line-height: 25px;
+      cursor: pointer;
+      box-sizing: border-box;
+      &:hover {
+        background: $light-blue;
+      }
+      &.selected {
+        background: $light-blue;
+        border: 1px solid $blue;
+        font-weight: bold;
+      }
+      &.current {
+        background: $yellow;
+        border: 1px solid indianred;
+      }
+      &.unavailable {
+        color: rgba(128, 128, 128, 0.58);
+      }
+    }
+  }
+  .date-picker-footer {
+    background: $light-blue;
+    text-align: center;
+    padding: 5px 0;
+    .today-button {
+      padding: 3px;
+      border-radius: 3px;
+      cursor: pointer;
+      border: 1px solid #126daf;
+      color: white;
+      font-weight: bold;
+      background-color: #4b9ceb;
+      outline: 0;
+      &:hover {
+        background-color: #3B87D0;
+      }
+      &:active {
+        background-color: #1161AE;
+      }
+    }
+  }
+}
+
+.period-picker {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid $blue;
+  box-sizing: border-box;
+  width: 210px;
+  user-select: none;
+  .period-picker-body {
+    height: 85%;
+    overflow: hidden;
+    .period-picker-column {
+      box-sizing: border-box;
+      border-right: 1px solid $light-gray;
+      float: left;
+      width: 50%;
+      height: 100%;
+      &:last-child {
+        border-right: none;
+      }
+      .arrow {
+        font-size: 11px;
+        font-weight: bold;
+        color: gray;
+        vertical-align: middle;
+      }
+      .item {
+        box-sizing: border-box;
+        float: left;
+        width: 50%;
+        height: (100% / 6);
+        padding: 9px;
+        text-align: center;
+        border: 1px solid #ffffff;
+        &.selected {
+          background: $light-blue;
+          border: 1px solid $blue;
+          font-weight: bold;
+        }
+        &.current {
+          background: $yellow;
+          border: 1px solid indianred;
+        }
+        &:hover:not(.selected) {
+          background: $light-blue;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .period-picker-footer {
+    background: $light-gray;
+    text-align: center;
+    height: 15%;
+    padding: 5px 0;
+    .period-picker-button {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Calendar",
+    "version": "0.0.0",
+    "description": "Koshelko's Calendar",
+    "author": "Egor Koshelko",
+    "repository": "https://github.com/mnemosha/Calendar",
+    "scripts": {
+        "postinstall": "node_modules/.bin/bower --config.analytics=false install"
+    },
+    "devDependencies": {
+        "bower": "^1.3.12",
+        "grunt": "^0.4.5",
+        "grunt-contrib-sass": "^0.8.1",
+        "grunt-contrib-concat": "^0.5.0",
+        "grunt-contrib-uglify": "^0.6.0",
+        "grunt-contrib-watch": "^0.6.1",
+        "grunt-contrib-jshint": "^0.10.0",
+        "grunt-contrib-cssmin": "^0.10.0",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-htmlmin": "^0.3.0",
+        "grunt-contrib-copy": "^0.7.0",
+        "grunt-autoprefixer": "^1.0.1",
+        "grunt-usemin": "^2.4.0",
+        "load-grunt-tasks": "^1.0.0",
+        "time-grunt": "^1.0.0",
+        "grunt-filerev": "^2.1.1",
+        "grunt-ng-annotate": "^0.4.0",
+        "grunt-newer": "^0.8.0",
+        "karma": "^0.12.24",
+        "karma-chrome-launcher": "^0.1.5",
+        "karma-jasmine": "^0.1.5",
+        "express": "^4.10.1",
+        "grunt-nodemon": "^0.3.0",
+        "grunt-concurrent": "^1.0.0",
+        "lodash": "^2.4.1",
+        "body-parser": "^1.9.3",
+        "grunt-karma": "^0.9.0",
+        "karma-coverage": "^0.2.7",
+        "moment": "^2.8.4"
+    }
+}

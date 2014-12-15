@@ -1,0 +1,87 @@
+.add-appointment-form {
+  position: fixed;
+  background: $blue;
+  padding: 5px;
+  border-radius: 5px;
+  width: 600px;
+  height: 186px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 3;
+  box-shadow: -3px 3px 6px rgb(143, 143, 143);
+  .header {
+    color: #ffffff;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 10px 10px 10px;
+    position: relative;
+    .time {
+      margin-left: 150px;
+    }
+    .cross {
+      font-size: 20px;
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      cursor: pointer;
+    }
+  }
+  .body {
+    padding: 5px;
+    background: #ffffff;
+    .first-row {
+      padding: 4px;
+      .title-title {
+        display: inline-block;
+        line-height: 26px;
+        width: 80px;
+      }
+      .title-input {
+        box-sizing: border-box;
+        padding: 3px;
+        width: 490px;
+        &.invalid {
+          outline: 1px solid red;
+        }
+      }
+    }
+    .second-row {
+      padding: 4px;
+      .comment-title {
+        width: 80px;
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 3px;
+      }
+      .comment-input {
+        width: 483px;
+        height: 56px;
+        resize: none;
+      }
+    }
+  }
+  .footer {
+    text-align: right;
+    background-color: #dfeaf2;
+    padding: 5px;
+    .button {
+      padding: 3px;
+      border-radius: 3px;
+      cursor: pointer;
+      border: 1px solid #126daf;
+      color: white;
+      font-weight: bold;
+      background-color: #4b9ceb;
+      outline: 0;
+      &:hover {
+        background-color: #3B87D0;
+      }
+      &:active {
+        background-color: #1161AE;
+      }
+    }
+  }
+}

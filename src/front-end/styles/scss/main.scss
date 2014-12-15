@@ -1,0 +1,18 @@
+$blue: #157fcc;
+$light-blue: #D3E1F1;
+$yellow: yellow;
+$light-gray: #ddd;
+
+html, body {
+  height: 100%;
+}
+body {
+  font-family: arial, helvetica, verdana, sans-serif;
+  font-size: 13px;
+  margin: 0;
+}
+.never-ever{}
+
+@import "date-picker";
+@import "add-appointment-form";
+@import "calendar";

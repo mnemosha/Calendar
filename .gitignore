@@ -1,0 +1,12 @@
+.idea/
+.tmp
+.sass-cache/
+node_modules/
+bower_components/
+build/
+coverage/
+
+src/front-end/styles/styles.css
+src/front-end/styles/styles.css.map
+src/front-end/images/spritesheet.png
+src/front-end/styles/sprites.css
